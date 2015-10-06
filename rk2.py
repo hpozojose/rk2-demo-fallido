@@ -16,7 +16,7 @@ plt.clf()
 
 t = np.linspace(0, 5 * 2 * np.pi / w, 400)
 
-plt.plot(t, A * np.sin(w * t))
+plt.plot(t, A * np.cos(w * t))
 
 
 def f(phi, w):
@@ -33,8 +33,8 @@ def get_k2(phi_n, w_n, h, f):
 
 def rk2_step(phi_n, w_n, h, f):
     k2 = get_k2(phi_n, w_n, h, f)
-    phi_n1 = phi_n + k2[0] * h
-    w_n1 = w_n + k2[1] * h
+    phi_n1 = phi_n + k2[0]
+    w_n1 = w_n + k2[1]
     return phi_n1, w_n1
 
 N_steps = 40000
